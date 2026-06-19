@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="620" viewBox="0 0 800 620">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="880" viewBox="0 0 800 880">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
@@ -21,14 +21,15 @@
       .prompt-cmd { fill: #e6edf3; font-size: 13px; }
       .divider { stroke: #21262d; stroke-width: 1; }
       .cursor { fill: #58a6ff; }
+      .sm { font-size: 12px; }
       @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
       .cursor { animation: blink 1.2s step-end infinite; }
     </style>
   </defs>
 
   <!-- Terminal window -->
-  <rect class="bg" x="0" y="0" width="800" height="620" rx="10"/>
-  <rect class="border" x="0" y="0" width="800" height="620" rx="10"/>
+  <rect class="bg" x="0" y="0" width="800" height="880" rx="10"/>
+  <rect class="border" x="0" y="0" width="800" height="880" rx="10"/>
 
   <!-- Title bar -->
   <rect class="bar" x="1" y="1" width="798" height="36" rx="10"/>
@@ -80,15 +81,15 @@
 
   <!-- Language bar -->
   <rect fill="#00ADD8" x="40" y="345" width="200" height="6" rx="3"/>
-  <rect fill="#326CE5" x="240" y="345" width="60" height="6" rx="0"/>
-  <rect fill="#EF5C55" x="300" y="345" width="30" height="6" rx="3"/>
+  <rect fill="#326CE5" x="240" y="345" width="60" height="6"/>
+  <rect fill="#EF5C55" x="300" y="345" width="30" height="6" rx="0 3 3 0"/>
 
   <rect fill="#00ADD8" x="40" y="360" width="10" height="10" rx="2"/>
-  <text class="val" x="56" y="370" font-size="12">Go</text>
+  <text class="val sm" x="56" y="370">Go</text>
   <rect fill="#326CE5" x="110" y="360" width="10" height="10" rx="2"/>
-  <text class="val" x="126" y="370" font-size="12">Kubernetes</text>
+  <text class="val sm" x="126" y="370">Kubernetes</text>
   <rect fill="#EF5C55" x="230" y="360" width="10" height="10" rx="2"/>
-  <text class="val" x="246" y="370" font-size="12">C/C++</text>
+  <text class="val sm" x="246" y="370">C/C++</text>
 
   <text class="key" x="40" y="400">Domains:</text>
   <text class="dim" x="56" y="420">-</text><text class="val" x="70" y="420">Container Storage Interface (CSI)</text>
@@ -96,23 +97,46 @@
   <text class="dim" x="56" y="460">-</text><text class="val" x="70" y="460">Kubernetes Operators</text>
   <text class="dim" x="56" y="480">-</text><text class="val" x="70" y="480">Volume Replication &amp; Disaster Recovery</text>
 
+  <!-- Events -->
+  <text class="header" x="24" y="515">Events:</text>
+  <text class="dim" x="40" y="515">  (recent)</text>
+  <text class="dim" x="40" y="535">TYPE     REASON       OBJECT</text>
+  <text class="ok" x="40" y="555">Normal</text><text class="val" x="120" y="555">MergedPR</text><text class="dim" x="230" y="555">ceph/ceph-csi</text><text class="val" x="370" y="555">— open image read-only for DiffIterate</text>
+  <text class="ok" x="40" y="575">Normal</text><text class="val" x="120" y="575">MergedPR</text><text class="dim" x="230" y="575">ceph/ceph-csi</text><text class="val" x="370" y="575">— add VolumeLocks to NodeGetVolumeStats</text>
+  <text class="ok" x="40" y="595">Normal</text><text class="val" x="120" y="595">MergedPR</text><text class="dim" x="230" y="595">ceph/ceph-csi</text><text class="val" x="370" y="595">— restart process on stuck gRPC calls</text>
+
   <!-- Divider -->
-  <line class="divider" x1="24" y1="500" x2="776" y2="500"/>
+  <line class="divider" x1="24" y1="615" x2="776" y2="615"/>
 
   <!-- Prompt 2: ceph status -->
-  <text class="prompt-arrow" x="24" y="525">❯</text>
-  <text class="prompt-path" x="40" y="525">~/ceph</text>
-  <text class="prompt-cmd" x="100" y="525">ceph status --developer</text>
+  <text class="prompt-arrow" x="24" y="640">❯</text>
+  <text class="prompt-path" x="40" y="640">~/ceph</text>
+  <text class="prompt-cmd" x="100" y="640">ceph status --developer</text>
 
-  <text class="header" x="40" y="550">cluster:</text>
-  <text class="key" x="56" y="570">id:</text>
-  <text class="dim" x="105" y="570">github.com/</text>
-  <text class="val" x="210" y="570">Rakshith-R</text>
-  <text class="key" x="56" y="590">health:</text>
-  <text class="ok" x="130" y="590">HEALTH_OK</text>
+  <text class="header" x="40" y="670">cluster:</text>
+  <text class="key" x="56" y="690">id:</text>
+  <text class="dim" x="120" y="690">github.com/</text>
+  <text class="val" x="225" y="690">Rakshith-R</text>
+  <text class="key" x="56" y="710">health:</text>
+  <text class="ok" x="140" y="710">HEALTH_OK</text>
 
-  <!-- Blinking cursor at bottom -->
-  <text class="prompt-arrow" x="24" y="615">❯</text>
-  <text class="prompt-path" x="40" y="615">~/ceph</text>
-  <rect class="cursor" x="100" y="603" width="8" height="16" rx="1"/>
+  <text class="header" x="40" y="740">services:</text>
+  <text class="key" x="56" y="760">contributions:</text>
+  <text class="val" x="210" y="760">516</text>
+  <text class="dim" x="245" y="760">this year</text>
+  <text class="key" x="56" y="780">reviews:</text>
+  <text class="val" x="210" y="780">296</text>
+  <text class="dim" x="245" y="780">pull requests reviewed</text>
+
+  <text class="header" x="40" y="810">data:</text>
+  <text class="key" x="56" y="830">projects maintained:</text>
+  <text class="val" x="260" y="830">3</text>
+  <text class="key" x="56" y="850">total stars:</text>
+  <text class="star" x="260" y="850">★ 15k+</text>
+  <text class="dim" x="320" y="850">across maintained repos</text>
+
+  <!-- Blinking cursor -->
+  <text class="prompt-arrow" x="24" y="878">❯</text>
+  <text class="prompt-path" x="40" y="878">~/ceph</text>
+  <rect class="cursor" x="100" y="866" width="8" height="16" rx="1"/>
 </svg>
