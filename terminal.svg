@@ -98,8 +98,8 @@
   <text class="dim" x="56" y="480">-</text><text class="val" x="70" y="480">Volume Replication &amp; Disaster Recovery</text>
 
   <!-- Events -->
-  <text class="header" x="24" y="515">Events:</text>
-  <text class="dim" x="115" y="515">(recent)</text>
+  <text class="header" x="24" y="515">Events:  </text>
+  <text class="dim" x="160" y="515">(recent)</text>
   <text class="dim" x="40" y="535">TYPE     REASON       OBJECT</text>
   <text class="ok" x="40" y="555">Normal</text><text class="val" x="120" y="555">MergedPR</text><text class="dim" x="230" y="555">ceph/ceph-csi</text><text class="val" x="370" y="555">— open image read-only for DiffIterate</text>
   <text class="ok" x="40" y="575">Normal</text><text class="val" x="120" y="575">MergedPR</text><text class="dim" x="230" y="575">ceph/ceph-csi</text><text class="val" x="370" y="575">— add VolumeLocks to NodeGetVolumeStats</text>
