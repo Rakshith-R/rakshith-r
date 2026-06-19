@@ -1,5 +1,5 @@
 <picture>
-  <img alt="kubectl describe developer rakshith-r" src="terminal.svg" width="800" />
+  <img alt="kubectl describe developer rakshith-r" src="https://raw.githubusercontent.com/Rakshith-R/rakshith-r/main/terminal.svg" width="800" />
 </picture>
 
 ---
